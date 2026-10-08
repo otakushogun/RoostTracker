@@ -1,0 +1,10 @@
+{
+  "events": [
+    {
+      "id": "kerr-lake-demo",
+      "title": "SYNTHETIC DEMO - Kerr Lake dawn ring (not real data)",
+      "synthetic": true,
+      "manifest": "kerr-lake-demo.json"
+    }
+  ]
+}
