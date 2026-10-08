@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RoostTracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>RoostTracker</h1>
+  <p class="banner" id="banner">Loading…</p>
+</header>
+<main>
+  <section class="controls">
+    <label>Event <select id="event"></select></label>
+    <label>Date (UTC) <select id="date"></select></label>
+  </section>
+  <section class="stage">
+    <div id="frame"><img id="img" alt="Radar frame"><div id="missing" hidden>NO SCAN DATA<br><small>scan missing from this manifest</small></div></div>
+  </section>
+  <section class="controls">
+    <button id="prev" aria-label="Previous scan">⏮</button>
+    <button id="play" aria-label="Play or pause">▶ Play</button>
+    <button id="next" aria-label="Next scan">⏭</button>
+    <input id="slider" type="range" min="0" max="0" value="0" aria-label="Scan timeline">
+  </section>
+  <section>
+    <p>Scan time: <strong id="time">–</strong> (<span id="pos">0/0</span>) <span id="status"></span></p>
+    <p class="note">Playback runs at <strong>15 display frames per second</strong>. This is NOT the radar sampling rate:
+      each display frame is one real scan, and scans are typically minutes apart. Gaps are shown as “NO SCAN DATA”, never filled in.</p>
+    <p class="note" id="meta"></p>
+  </section>
+</main>
+<script src="playback.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

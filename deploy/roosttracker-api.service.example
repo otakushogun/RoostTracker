@@ -1,0 +1,15 @@
+# EXAMPLE systemd unit - review paths/user before use.
+[Unit]
+Description=RoostTracker API
+After=network.target
+
+[Service]
+User=roosttracker
+WorkingDirectory=/opt/roosttracker
+EnvironmentFile=/etc/roosttracker.env
+ExecStart=/opt/roosttracker/.venv/bin/roosttracker-api
+Restart=on-failure
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
